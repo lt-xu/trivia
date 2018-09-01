@@ -49,5 +49,8 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+  clear:function(e){
+    wx.clearStorageSync();
   }
 })
