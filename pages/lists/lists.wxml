@@ -1,22 +1,21 @@
-<!--pages/lists/lists.wxml-->
-<!-- <slider-left class="swider-item" wx:for="{{lists}}" wx:for-item="list" wx:key="list.id"
-  open="{{list.isOpen}}"
-  data-id="{{list.id}}"
-  data-index="{{index}}"
+<!-- pages/lists/lists.wxml -->
+<slider-left class="swider-item" wx:for="{{notes}}" wx:for-item="note" wx:key="note.id"
+  open="{{note.isOpen}}"
+  data-id="{{note.itemId}}"
   bind:sliderLeftStart="handleSliderLeftStart"
   bind:change="handleChange"
   bind:delete="handleDelete">
   <view class='btnbox'>
     <button class="btn" bindtap="edit"></button>
-    <view class="text">{{list.text}}</view>
+    <view class="text">{{note.date}} : {{note.content}}</view>
   </view>
-</slider-left> -->
-<view class="container">
+</slider-left>
+<!-- <view class="container">
   <view class="list">
-    <block wx:for="{{storageData}}" wx:key="index">
+    <block wx:for="{{notes}}" wx:key="index" wx:for-item="note" wx:for-index="idx">
       <navigator url="/pages/detail/detail?dayId={{dayId}}&itemId={{index}}" class="list_item" wx:if="{{completeKey==9?true:false}}">
         <!-- <icon type="success" size="20" wx:if="{{item.completed}}" data-id="{{index}}" catchtap="changeCompleted" />
-        <icon type="waiting" size="20" wx:if="{{!item.completed}}" data-id="{{index}}" catchtap="changeCompleted" /> -->
+        <icon type="waiting" size="20" wx:if="{{!item.completed}}" data-id="{{index}}" catchtap="changeCompleted" />
         <view class="title">{{item.title}}</view>
         <view class="content">
           <text>{{item.time}}</text>
@@ -25,7 +24,7 @@
     </block>
   </view>
 
-</view>
+</view> -->
 
 
 <navigator url="/pages/add/add?dayId={{dayId}}">
