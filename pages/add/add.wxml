@@ -3,7 +3,7 @@
 	<view class="input_box">
 		<view class="input_name">琐事：</view>
 		<view class="input_val">
-			<textarea class="content" auto-focus="true" placeholder-style="font-size:24rpx;" bindinput="changeTitle" value="{{title}}"/>
+			<textarea class="content" auto-focus="true" placeholder-style="font-size:24rpx;" bindinput="changeContent" value="{{note}}"/>
 		</view>
 	</view> 
   <view class="input_box">

@@ -49,16 +49,27 @@ App({
   //添加
   addOneDayData(dayId, obj) {
   },
-  addOneItemData(dayId, itemId, obj, fun) {
-    let dayData = wx.getStorageSync(dayId) || {};
-    dayData[itemId] = obj;
-    wx.setStorage({
-      key: dayId,
-      data: dayData,
-      success() {
-        if (fun) fun();
-      }
-    });
+  getAllNotes(){
+    return notes = wx.getStorageSync("allNotes")||[];
+  },
+  addOneItemData(itemId, content, date, time) {
+    let note = {"itemId":itemId,"content":content,"date":date, "time":time};
+    console.log("note:"+note);
+    let notes = wx.getStorageSync("allNotes")||[];
+    notes.push(note);
+    wx.setStorageSync('allNotes',notes);
+    // wx.setStorage({
+    //   key: "allNotes",
+    //   data: notes,
+    //   success() {
+    //     if (fun) fun();
+    //   }
+    // });
+    // notes = wx.getStorageSync("allNotes");
+    // console.log("notes.length: "+notes.length)
+    // for (var i = 0; i < notes.length; i++) {
+    //   console.log(notes[i].content);
+    // }
   },
   //设置
   setOneDayData(dayId, obj) {
