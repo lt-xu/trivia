@@ -1,1 +1,2 @@
 /* pages/calendar/calendar.wxss */
+@import '../../template/calendar/index.wxss';
