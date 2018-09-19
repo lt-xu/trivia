@@ -45,8 +45,8 @@
 .round-click {
   background: transparent;
   position: fixed;
-  bottom: 150rpx;
-  right: 150rpx;
+  bottom: 75rpx;
+  right: 95rpx;
   z-index: 9;
 }
 .addition {

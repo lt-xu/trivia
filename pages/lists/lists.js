@@ -123,8 +123,20 @@ Page({
     console.log('显示/关闭了菜单:', isOpen)
   },
 
-  handleDelete: function () {
-    console.log('点击删除了')
+  handleDelete: function (e) {
+    var dataset = e.target.dataset;
+    var Index = dataset.index; //拿到是第几个数组
+
+    this.data.lists.splice(Index, 1);
+
+    this.setData({
+      lists: this.data.lists
+    });
+    //渲染数据
+    this.setData({
+      lists: this.data.lists
+    });
+    
   },
   handleSliderLeftStart: function (e) {
     console.log('开始左滑', e.target.dataset.id)
