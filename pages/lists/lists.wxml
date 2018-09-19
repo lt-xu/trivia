@@ -6,9 +6,10 @@
   bind:change="handleChange"
   bind:delete="handleDelete">
   <view class='btnbox'>
-    <button class="btn" bindtap="bindViewTap"></button>
+    <button class="btn" bindtap="edit"></button>
     <view class="text">{{list.text}}</view>
   </view>
 </slider-left>
-<!-- <view wx:for="{{lists}}" wx:for-item="list" wx:key="list.id"> -->
-<!-- </view> -->
+<view class="round-click" >
+     <image class='addition' src='/image/addicon.png' bindtap='addList'></image>
+</view>

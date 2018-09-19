@@ -1,27 +1,29 @@
 {
-  "pages":[
+  "pages": [
     "pages/lists/lists",
     "pages/calendar/calendar",
     "pages/me/me",
-    "pages/logs/logs"    
+    "pages/logs/logs",
+    "pages/edit/edit",
+    "pages/addList/addList"
   ],
-  "window":{
+  "window": {
     "navigationBarBackgroundColor": "#000000",
     "navigationBarTitleText": "记点琐事",
-    "navigationBarTextStyle":"white",
+    "navigationBarTextStyle": "white",
     "backgroundColor": "#eeeeee",
     "backgroundTextStyle": "light"
   },
   "tabBar": {
-      "color": "#a9a9a9",
-      "selectedColor": "#1f1f1f",
-      "backgroundColor": "#fefefe",
-      "borderStyle": "black",
+    "color": "#a9a9a9",
+    "selectedColor": "#1f1f1f",
+    "backgroundColor": "#fefefe",
+    "borderStyle": "black",
     "list": [
       {
         "pagePath": "pages/lists/lists",
         "text": "列表",
-        "iconPath":"image/列表.png",
+        "iconPath": "image/列表.png",
         "selectedIconPath": "image/列表_selected.png"
       },
       {
@@ -31,8 +33,8 @@
         "selectedIconPath": "image/日历_selected.png"
       },
       {
-        "pagePath":"pages/me/me",
-        "text":"我",
+        "pagePath": "pages/me/me",
+        "text": "我",
         "iconPath": "image/我.png",
         "selectedIconPath": "image/我_selected.png"
       }
@@ -44,5 +46,5 @@
     "uploadFile": 10000,
     "downloadFile": 10000
   },
-  "debug":true
+  "debug": true
 }

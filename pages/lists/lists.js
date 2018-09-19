@@ -138,9 +138,14 @@ Page({
       lists: this.data.lists
     })
   },
-  bindViewTap: function () {
+    edit: function () {
     wx.navigateTo({
       url: '../logs/logs'
     })
-  }
+  },
+  addList: function () {
+    wx.navigateTo({
+      url: '../addList/addList',
+    })
+  },
 })
