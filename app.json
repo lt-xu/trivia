@@ -27,16 +27,16 @@
         "selectedIconPath": "image/列表_selected.png"
       },
       {
+        "pagePath": "pages/addList/addList",
+        "text": "添加",
+        "iconPath": "image/addicon.png",
+        "selectedIconPath": "image/addicon.png"
+      },
+      {
         "pagePath": "pages/calendar/calendar",
         "text": "日历",
         "iconPath": "image/日历.png",
         "selectedIconPath": "image/日历_selected.png"
-      },
-      {
-        "pagePath": "pages/me/me",
-        "text": "我",
-        "iconPath": "image/我.png",
-        "selectedIconPath": "image/我_selected.png"
       }
     ]
   },

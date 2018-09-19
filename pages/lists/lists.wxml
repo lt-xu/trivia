@@ -11,6 +11,6 @@
     <view class="text">{{list.text}}</view>
   </view>
 </slider-left>
-<view class="round-click" >
+<!-- <view class="round-click" >
      <image class='addition' src='/image/addicon.png' bindtap='addList'></image>
-</view>
+</view> -->
