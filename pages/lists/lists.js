@@ -5,7 +5,58 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    lists: [
+      {
+        id: 'a1',
+        text: '你好1'
+      },
+      {
+        id: 'a2',
+        text: '你好2'
+      },
+      {
+        id: 'a3',
+        text: '你好3'
+      },
+      {
+        id: 'a4',
+        text: '你好4'
+      },
+      {
+        id: 'a5',
+        text: '你好5'
+      }, {
+        id: 'a6',
+        text: '你好6'
+      }, {
+        id: 'a7',
+        text: '你好7'
+      }, {
+        id: 'a8',
+        text: '你好8'
+      }, {
+        id: 'a9',
+        text: '你好9'
+      }, {
+        id: 'a10',
+        text: '你好10'
+      }, {
+        id: 'a11',
+        text: '你好11'
+      }, {
+        id: 'a12',
+        text: '你好12'
+      }, {
+        id: 'a13',
+        text: '你好13'
+      }, {
+        id: 'a14',
+        text: '你好14'
+      }, {
+        id: 'a15',
+        text: '你好15'
+      }
+    ]
   },
 
   /**
@@ -19,7 +70,12 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    // 默认每个选项都是关闭状态
+    this.data.lists.forEach(list => {
+      list.isOpen = false
+    });
+    global.name = 'lizong'
+    console.log(global.wx)
   },
 
   /**
@@ -62,5 +118,29 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  handleChange: function (isOpen) {
+    console.log('显示/关闭了菜单:', isOpen)
+  },
+
+  handleDelete: function () {
+    console.log('点击删除了')
+  },
+  handleSliderLeftStart: function (e) {
+    console.log('开始左滑', e.target.dataset.id)
+    this.data.lists.forEach(todoItem => {
+      // 除了当前项，其它打开项的菜单都关闭，确保每次只有一个项可以左滑显示删除
+      if (todoItem.id !== e.target.dataset.id && todoItem.isOpen) {
+        todoItem.isOpen = false
+      }
+    });
+    this.setData({
+      lists: this.data.lists
+    })
+  },
+  bindViewTap: function () {
+    wx.navigateTo({
+      url: '../logs/logs'
+    })
   }
 })

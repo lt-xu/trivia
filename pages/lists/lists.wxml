@@ -1,3 +1,14 @@
 <!--pages/lists/lists.wxml-->
-<text>pages/lists/lists.wxml</text>
-
+<slider-left class="swider-item" wx:for="{{lists}}" wx:for-item="list" wx:key="list.id"
+  open="{{list.isOpen}}"
+  data-id="{{list.id}}"
+  bind:sliderLeftStart="handleSliderLeftStart"
+  bind:change="handleChange"
+  bind:delete="handleDelete">
+  <view class='btnbox'>
+    <button class="btn" bindtap="bindViewTap"></button>
+    <view class="text">{{list.text}}</view>
+  </view>
+</slider-left>
+<!-- <view wx:for="{{lists}}" wx:for-item="list" wx:key="list.id"> -->
+<!-- </view> -->
