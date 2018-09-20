@@ -2,10 +2,8 @@
   "pages": [
     "pages/lists/lists",
     "pages/calendar/calendar",
-    "pages/me/me",
-    "pages/logs/logs",
     "pages/edit/edit",
-    "pages/addList/addList"
+    "pages/add/add"
   ],
   "window": {
     "navigationBarBackgroundColor": "#000000",
@@ -27,7 +25,7 @@
         "selectedIconPath": "image/列表_selected.png"
       },
       {
-        "pagePath": "pages/addList/addList",
+        "pagePath": "pages/add/add",
         "text": "添加",
         "iconPath": "image/addicon.png",
         "selectedIconPath": "image/addicon.png"
