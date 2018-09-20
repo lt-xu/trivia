@@ -1,10 +1,14 @@
 //lists.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    storageData: [],
+    dayId: 0,
+    dayString: '',
     lists: [
       {
         id: 'a1',
@@ -63,7 +67,25 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let dayId = '';
+    if (options.dayId) {
+      dayId = options.dayId;
+    } else {
+      dayId = (+new Date((new Date()).toDateString())) / 1000 + '';
+    };
+    console.log("list,js:dayId:", dayId)
+    let day = new Date(dayId * 1000);
+    let dayY = day.getFullYear();
+    let day_m = day.getMonth() + 1;
+    let dayM = day_m > 9 ? day_m : '0' + day_m;
+    let dayD = day.getDate() > 9 ? day.getDate() : '0' + day.getDate();
+    let dayString = `${dayY}-${dayM}-${dayD}`;
+    this.setData({
+      dayId: dayId,
+      dayString: dayString
+    });
+    this.setOneDayAllData(dayId);
+    console.log("lists:onLoad")
   },
 
   /**
@@ -82,7 +104,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    console.log("lists:onShow")
   },
 
   /**
@@ -155,9 +177,16 @@ Page({
       url: '../logs/logs'
     })
   },
-  addList: function () {
+  add: function () {
     wx.navigateTo({
-      url: '../addList/addList',
+      url: '/pages/add/add?dayId={{dayId}}',
     })
+    console.log('url:','/pages/add/add?dayId={{dayId}}')
   },
-})
+  setOneDayAllData(dayId) {
+    let dayData = app.getOneDayData(dayId);
+    this.setData({
+      storageData: dayData
+    });
+  }
+});

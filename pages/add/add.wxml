@@ -9,7 +9,7 @@
   <view class="input_box">
 		<view class="input_name">日期：</view>
 		<view class="input_val">
-			<picker mode="date" value="{{date}}" start="2018-01-01" bindchange="bindTimeChange">
+			<picker mode="date" value="{{date}}" start="2018-01-01" bindchange="bindDateChange">
 				<view class="picker">{{date}}</view>
 			</picker>
 		</view>

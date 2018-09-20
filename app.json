@@ -3,7 +3,9 @@
     "pages/lists/lists",
     "pages/calendar/calendar",
     "pages/edit/edit",
-    "pages/add/add"
+    "pages/add/add",
+    "pages/addTab/addTab",
+    "pages/me/me"
   ],
   "window": {
     "navigationBarBackgroundColor": "#000000",
@@ -25,16 +27,16 @@
         "selectedIconPath": "image/列表_selected.png"
       },
       {
-        "pagePath": "pages/add/add",
-        "text": "添加",
-        "iconPath": "image/addicon.png",
-        "selectedIconPath": "image/addicon.png"
-      },
-      {
         "pagePath": "pages/calendar/calendar",
         "text": "日历",
         "iconPath": "image/日历.png",
         "selectedIconPath": "image/日历_selected.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我",
+        "iconPath": "image/我.png",
+        "selectedIconPath": "image/我_selected.png"
       }
     ]
   },

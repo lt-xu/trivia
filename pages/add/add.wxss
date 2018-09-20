@@ -1,6 +1,7 @@
 .container{
 	margin:20rpx;
 	padding:50rpx 0;
+  /* width: 90%; */
 	background-color: #fff;
 }
 .input_box{
@@ -57,6 +58,8 @@
 	margin-right: 8rpx;
 } 
 .btn{ 
+  /* margin:20rpx; */
+	/* padding:50rpx 0; */
   width:90%;
   margin:150rpx auto 0 auto;
   height: 80rpx;
