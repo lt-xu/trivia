@@ -1,6 +1,6 @@
 {
   "pages": [
-    "pages/lists/lists",
+    "pages/list/list",
     "pages/calendar/calendar",
     "pages/edit/edit",
     "pages/add/add",
@@ -21,7 +21,7 @@
     "borderStyle": "black",
     "list": [
       {
-        "pagePath": "pages/lists/lists",
+        "pagePath": "pages/list/list",
         "text": "列表",
         "iconPath": "image/列表.png",
         "selectedIconPath": "image/列表_selected.png"

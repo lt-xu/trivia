@@ -1,4 +1,4 @@
-//lists.js
+//list.js
 const app = getApp()
 Page({
 

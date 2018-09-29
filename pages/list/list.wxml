@@ -1,0 +1,25 @@
+<!-- pages/list/list.wxml -->
+
+<view class='container'>
+<slider-left class="list-item" wx:for="{{notes}}" wx:for-item="note" wx:key="itemId"
+  open="{{note.isOpen}}" wx:for-index="index" 
+  data-index="{{index}}"
+  data-itemId="{{note.itemId}}"
+  bind:delete="handleDelete">
+  <view class='btnbox'>
+    <button class="btn"  data-index="{{index}}" bindtap="edit"></button>
+    <view class='text'>
+    <text class = "date">{{note.date}}</text>
+    <text class='content'>{{note.content}}</text>
+    </view>
+  </view>
+</slider-left>
+
+<navigator url="/pages/add/add">
+  <view class="round-click">
+    <image class='addition' src='/image/addicon.png'></image>
+  </view>
+</navigator>
+
+</view>
+
