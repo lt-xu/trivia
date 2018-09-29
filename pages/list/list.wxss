@@ -65,7 +65,7 @@
   background: transparent;
   position: fixed;
   bottom: 75rpx;
-  right: 95rpx;
+  right: 325rpx;
   z-index: 9;
 }
 .addition {

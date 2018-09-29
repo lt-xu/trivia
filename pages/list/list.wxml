@@ -15,11 +15,12 @@
   </view>
 </slider-left>
 
+
+
+</view>
 <navigator url="/pages/add/add">
   <view class="round-click">
     <image class='addition' src='/image/addicon.png'></image>
   </view>
 </navigator>
-
-</view>
 
