@@ -39,7 +39,7 @@ App({
     return notes[index];
   },
   getAllNotes(){
-    return notes = wx.getStorageSync("allNotes")||[];
+    return wx.getStorageSync("allNotes")||[];
   },
   addNote:function(itemId, content, date, time) {
     let note = {"itemId":itemId,"content":content,"date":date, "time":time};
@@ -74,9 +74,6 @@ App({
     for (var i = 0; i < notes.length; i++) {
       console.log("-->note: "+i+" {itemId: "+notes[i].itemId+", content: "+notes[i].content+", date: "+notes[i].date+", time: "+notes[i].time+"}")
     }
-  },
-  //设置
-  setOneItemData(dayId, itemId, obj) {
   },
   globalData: {
     userInfo: null

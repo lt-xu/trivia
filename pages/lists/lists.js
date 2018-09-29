@@ -30,11 +30,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    let notes = wx.getStorageSync("allNotes") || [];
+    let notes = app.getAllNotes();
     this.setData({
       notes:notes
     });
-    console.log("lists:onShow");
     app.storageNotesInfo();
   },
 
@@ -72,56 +71,53 @@ Page({
   onShareAppMessage: function () {
 
   },
-  handleChange: function (isOpen) {
-    console.log('显示/关闭了菜单:', isOpen)
-  },
 
+  //删除
   handleDelete: function (e) {
     console.log(e);
-    var dataset = e.target.dataset;
+    let dataset = e.target.dataset;
     console.log("dataset.index:");
-    var index = dataset.index; //拿到是第几个数组
+    let index = dataset.index; //拿到是第几个数组
     console.log(dataset.index);
-    this.data.notes.splice(index, 1);
+    this.data.notes.splice(index, 1); 
     //渲染数据
     this.setData({
       notes: this.data.notes
     });
     wx.setStorageSync('allNotes',this.data.notes);
     app.storageNotesInfo();
-    // console.log("allNotes.length:"+wx.getStorageSync("allNotes").length);
   },
-  handleSliderLeftStart: function (e) {
-    console.log('开始左滑', e.target.dataset.id)
-    this.data.notes.forEach(todoItem => {
-      // 除了当前项，其它打开项的菜单都关闭，确保每次只有一个项可以左滑显示删除
-      if (todoItem.id !== e.target.dataset.id && todoItem.isOpen) {
-        todoItem.isOpen = false
-      }
-    });
-    this.setData({
-      notes: this.data.notes
-    })
-  },
-    edit: function (e) {
-      console.log(e);
-      var dataset = e.target.dataset;
-      var index = dataset.index; //拿到是第几个数组
-      // console.log('/pages/add/add?index={{index}}')
-      wx.navigateTo({
-        url: '/pages/add/add?index='+index,
-      })
-  },
-  add: function () {
+
+  edit: function (e) {
+    console.log(e);
+    let dataset = e.target.dataset;
+    let index = dataset.index; //拿到是第几个数组
     wx.navigateTo({
-      url: '/pages/add/add?dayId={{dayId}}',
+      url: '/pages/add/add?index='+index,
     })
-    console.log('url:','/pages/add/add?dayId={{dayId}}')
   },
-  setOneDayAllData(dayId) {
-    let dayData = app.getOneDayData(dayId);
-    this.setData({
-      storageData: dayData
-    });
-  }
+
+  // add: function () {
+  //   wx.navigateTo({
+  //     url: '/pages/add/add?dayId={{dayId}}',
+  //   })
+  //   console.log('url:','/pages/add/add?dayId={{dayId}}')
+  // },
+
+    // handleChange: function (isOpen) {
+  //   console.log('显示/关闭了菜单:', isOpen)
+  // },
+
+  // handleSliderLeftStart: function (e) {
+  //   console.log('开始左滑', e.target.dataset.id)
+  //   this.data.notes.forEach(todoItem => {
+  //     // 除了当前项，其它打开项的菜单都关闭，确保每次只有一个项可以左滑显示删除
+  //     if (todoItem.id !== e.target.dataset.id && todoItem.isOpen) {
+  //       todoItem.isOpen = false
+  //     }
+  //   });
+  //   this.setData({
+  //     notes: this.data.notes
+  //   })
+  // },
 });
