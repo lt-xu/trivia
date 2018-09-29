@@ -52,7 +52,7 @@ App({
   getAllNotes(){
     return notes = wx.getStorageSync("allNotes")||[];
   },
-  addOneItemData(itemId, content, date, time) {
+  addOneItemData:function(itemId, content, date, time) {
     let note = {"itemId":itemId,"content":content,"date":date, "time":time};
     console.log("note:"+note);
     let notes = wx.getStorageSync("allNotes")||[];
@@ -70,6 +70,14 @@ App({
     // for (var i = 0; i < notes.length; i++) {
     //   console.log(notes[i].content);
     // }
+  },
+  storageNotesInfo:function(){
+    let notes = wx.getStorageSync("allNotes");
+    console.log("storageNotesInfo:")
+    console.log("-->notes.length:"+notes.length);
+    for (var i = 0; i < notes.length; i++) {
+      console.log("-->note: "+i+" {itemId: "+notes[i].itemId+", content: "+notes[i].content+", date: "+notes[i].date+", time: "+notes[i].time+"}")
+    }
   },
   //设置
   setOneDayData(dayId, obj) {
