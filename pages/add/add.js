@@ -109,7 +109,7 @@ Page({
     }
     app.storageNotesInfo();
     wx.switchTab({
-      url:'/pages/lists/lists',
+      url:'/pages/list/list',
       success:function(){
         console.log("switchTab successs");
       },

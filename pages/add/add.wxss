@@ -1,24 +1,25 @@
 .container{
-	margin:20rpx;
-	padding:50rpx 0;
+	margin:50rpx;
+	padding: 0;
   /* width: 90%; */
 	background-color: #fff;
 }
-.input_box{
+.input_box{   
 	overflow: hidden; 
 	clear: both;
-	margin-bottom:0rpx; 
+	margin-bottom:0rpx;
+  /* margin-left: 20rpx;  */
 	line-height: 66rpx;
   width: 100%;
 }
 .input_name{
 	width: 20%;
 	float: left;
-	padding-right: 20rpx;
-	text-align: right;
+	/* padding-right: 10rpx; */
+	text-align: left;
 }
 .input_val{
-	width: 72%;
+	width: 76%;
 	float: left;
 }
 .input_val textarea{
@@ -51,17 +52,17 @@
 }
 .picker{
 	display: inline-block; 
-	font-size: 24rpx;
+	font-size: small;
 }
 .icon-shijian{
 	color:#1180ff;
 	margin-right: 8rpx;
 } 
 .btn{ 
-  /* margin:20rpx; */
+  margin:50rpx;
 	/* padding:50rpx 0; */
-  width:90%;
-  margin:150rpx auto 0 auto;
+  width:100%;
+  /* margin:150rpx auto 0 auto; */
   height: 80rpx;
   font-size: 28rpx;
   color:#fff;
