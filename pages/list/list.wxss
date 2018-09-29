@@ -64,7 +64,7 @@
 .round-click {
   background: transparent;
   position: fixed;
-  bottom: 75rpx;
+  bottom: 120rpx;
   right: 325rpx;
   z-index: 9;
 }
