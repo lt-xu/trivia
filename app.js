@@ -56,7 +56,16 @@ App({
     let note = {"itemId":itemId,"content":content,"date":date, "time":time};
     console.log("note:"+note);
     let notes = wx.getStorageSync("allNotes")||[];
-    notes.push(note);
+    //倒排序
+    notes.unshift(note);
+    //重新排序
+    if (notes.length > 1) {
+      if (note.itemId < notes[1].itemId ) { 
+        notes = notes.sort((a,b)=>{
+          return -(a.itemId - b.itemId)
+        })
+      }
+    }
     wx.setStorageSync('allNotes',notes);
     // wx.setStorage({
     //   key: "allNotes",
