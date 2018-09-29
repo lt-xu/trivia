@@ -2,9 +2,7 @@
   "pages": [
     "pages/list/list",
     "pages/calendar/calendar",
-    "pages/edit/edit",
     "pages/add/add",
-    "pages/addTab/addTab",
     "pages/me/me"
   ],
   "window": {
