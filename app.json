@@ -8,9 +8,9 @@
     "pages/me/me"
   ],
   "window": {
-    "navigationBarBackgroundColor": "#000000",
+    "navigationBarBackgroundColor": "white",
     "navigationBarTitleText": "记点琐事",
-    "navigationBarTextStyle": "white",
+    "navigationBarTextStyle": "black",
     "backgroundColor": "#eeeeee",
     "backgroundTextStyle": "light"
   },
