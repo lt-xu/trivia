@@ -1,9 +1,8 @@
 <!-- pages/lists/lists.wxml -->
-<slider-left class="swider-item" wx:for="{{notes}}" wx:for-item="note" wx:key="note.id"
-  open="{{note.isOpen}}"
-  data-id="{{note.itemId}}"
-  bind:sliderLeftStart="handleSliderLeftStart"
-  bind:change="handleChange"
+<slider-left class="swider-item" wx:for="{{notes}}" wx:for-item="note" wx:key="itemId"
+  open="{{note.isOpen}}" wx:for-index="index" 
+  data-index="{{index}}"
+  data-itemId="{{note.itemId}}"
   bind:delete="handleDelete">
   <view class='btnbox'>
     <button class="btn" bindtap="edit"></button>

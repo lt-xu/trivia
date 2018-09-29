@@ -35,6 +35,7 @@ Page({
       notes:notes
     });
     console.log("lists:onShow");
+    app.storageNotesInfo();
   },
 
   /**
@@ -76,15 +77,19 @@ Page({
   },
 
   handleDelete: function (e) {
+    console.log(e);
     var dataset = e.target.dataset;
+    console.log("dataset.index:");
     var Index = dataset.index; //拿到是第几个数组
-
+    console.log(dataset.index);
     this.data.notes.splice(Index, 1);
     //渲染数据
     this.setData({
       notes: this.data.notes
     });
-    
+    wx.setStorageSync('allNotes',this.data.notes);
+    app.storageNotesInfo();
+    // console.log("allNotes.length:"+wx.getStorageSync("allNotes").length);
   },
   handleSliderLeftStart: function (e) {
     console.log('开始左滑', e.target.dataset.id)
