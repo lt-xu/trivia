@@ -80,9 +80,9 @@ Page({
     console.log(e);
     var dataset = e.target.dataset;
     console.log("dataset.index:");
-    var Index = dataset.index; //拿到是第几个数组
+    var index = dataset.index; //拿到是第几个数组
     console.log(dataset.index);
-    this.data.notes.splice(Index, 1);
+    this.data.notes.splice(index, 1);
     //渲染数据
     this.setData({
       notes: this.data.notes
@@ -103,10 +103,14 @@ Page({
       notes: this.data.notes
     })
   },
-    edit: function () {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
+    edit: function (e) {
+      console.log(e);
+      var dataset = e.target.dataset;
+      var index = dataset.index; //拿到是第几个数组
+      // console.log('/pages/add/add?index={{index}}')
+      wx.navigateTo({
+        url: '/pages/add/add?index='+index,
+      })
   },
   add: function () {
     wx.navigateTo({

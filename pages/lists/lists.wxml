@@ -5,7 +5,7 @@
   data-itemId="{{note.itemId}}"
   bind:delete="handleDelete">
   <view class='btnbox'>
-    <button class="btn" bindtap="edit"></button>
+    <button class="btn"  data-index="{{index}}" bindtap="edit"></button>
     <view class="text">{{note.date}} : {{note.content}}</view>
   </view>
 </slider-left>
@@ -26,7 +26,7 @@
 </view> -->
 
 
-<navigator url="/pages/add/add?dayId={{dayId}}">
+<navigator url="/pages/add/add">
   <view class="round-click">
     <image class='addition' src='/image/addicon.png'></image>
   </view>

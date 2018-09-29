@@ -1,45 +1,51 @@
 // pages/project/project.js
 const app = getApp();
-const now = new Date();
 Page({
   data: {
     itemId:0,    //1970.1.1至今的毫秒数，作为itemId
     content: '',
     date: '',   //只记录月-日
-    time: ''
+    time: '',
+    fullDate:'',
+    index:-1,
+    dateObj:"",
   },
   onLoad(options) {
-    console.log("add:onLoad:options:",options)
     const _this = this;
-    const now = new Date();
-    let itemId = now.getTime();
-    let month = now.getMonth()+1;
-    if (month<10) {month = '0'+month};  //月份显示为两位数字
-    let day = now.getDate();      
-    if (day<10) {day = '0'+day };     //日期显示为两位数字
-    let date = month + "-" +day;
-    let hour = now.getHours();
-    if (hour <10 ) { hour = '0'+hour }; //小时显示为两位数字
-    let minute = now.getMinutes();
-    if (minute < 10) { minute = '0'+minute; } //分钟显示为两位数字
-    let time = hour + ":" + minute;
-    // let dayId = options.dayId;
-    // let currentObj = new Date(dayId * 1000);
-    // let timeDate = currentObj.getFullYear() + '年' + (currentObj.getMonth() + 1) + '月' + currentObj.getDate() + '日';
-    if (options.itemId) {
-      let dayData = app.getOneItemData(dayId, options.itemId);
+    if (options.index) {
+      let note = app.getNote(options.index);
+      let dateObj = new Date(note.itemId);
+      let index = options.index;
+      // console.log("onLoad:index:"+index);
       this.setData({
-        note: dayData.note,
-        date: dayData.date,
-        time: dayData.time,
-        itemId: options.itemId,
-        dayId: options.dayId
+        itemId:note.itemId,
+        content:note.content,
+        date: note.date,
+        time: note.time,
+        fullDate:dateObj.getFullYear()+'-'+note.date,
+        index:index,
+        dateObj:dateObj
       });
     } else {
+      let dateObj = new Date();
+      let itemId = dateObj.getTime();
+      let month = dateObj.getMonth()+1;
+      if (month<10) {month = '0'+month};  //月份显示为两位数字
+      let day = dateObj.getDate();      
+      if (day<10) {day = '0'+day };     //日期显示为两位数字
+      let date = month + "-" +day;
+      let fullDate = dateObj.getFullYear()+"-"+date;
+      let hour = dateObj.getHours();
+      if (hour <10 ) { hour = '0'+hour }; //小时显示为两位数字
+      let minute = dateObj.getMinutes();
+      if (minute < 10) { minute = '0'+minute; } //分钟显示为两位数字
+      let time = hour + ":" + minute;
       this.setData({
         itemId: itemId,
         date: date,
-        time: time
+        time: time,
+        fullDate:fullDate,
+        dateObj:dateObj,
       });
     };
   },
@@ -54,28 +60,31 @@ Page({
     let month = fullDate.substring(5,7);
     let day = fullDate.substring(8,10);
     let date = fullDate.substring(5,10);
-    now.setFullYear(year);
-    now.setMonth(month-1);
-    now.setDate(day);
-    let itemId = now.getTime();
+    let dateObj = this.data.dateObj;
+    dateObj.setFullYear(year);
+    dateObj.setMonth(month-1);
+    dateObj.setDate(day);
+    let itemId = dateObj.getTime();
     this.setData({
       date: date,
       itemId: itemId
     });
-    console.log("date change to :"+e.detail.value+" 'now' change to :" + now);
+    console.log("date change to :"+e.detail.value+" 'dateObj' change to :" + dateObj);
   },
   bindTimeChange: function (e) {
     let time = e.detail.value;
     let hour = time.substring(0,2);
     let minute = time.substring(3,5);
-    now.setHours(hour);
-    now.setMinutes(minute);
-    let itemId = now.getTime();
+    let dateObj = this.data.dateObj;
+    dateObj.setHours(hour);
+    dateObj.setMinutes(minute);
+    let itemId = dateObj.getTime();
     this.setData({
       time: time,
-      itemId:itemId
+      itemId:itemId,
+      dateObj:dateObj,
     });
-    console.log("time change to :"+e.detail.value+" 'now' change to :"+ now);
+    console.log("time change to :"+e.detail.value+" 'dateObj' change to :"+ dateObj);
   },
   setRecord() {
     if (this.data.content == '') {
@@ -90,8 +99,14 @@ Page({
     let content = this.data["content"];
     let date = this.data["date"];
     let time = this.data["time"];
+    let index = this.data.index;
     console.log("add.js:content:"+content);
-    app.addOneItemData(itemId,content,date,time);
+    console.log("setRecord:index:"+index);
+    if (index != -1) {
+      app.changeNote(index,itemId,content,date,time);
+    } else {
+      app.addNote(itemId,content,date,time);
+    }
     app.storageNotesInfo();
     wx.switchTab({
       url:'/pages/lists/lists',

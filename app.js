@@ -34,29 +34,18 @@ App({
     })
   },
   //获取
-  getOneDayData(dayId) {
-    let obj = wx.getStorageSync(dayId);
-    return obj;
-  },
-  getOneItemData(dayId, itemId) {
-    let dayData = wx.getStorageSync(dayId);
-    for (let i in dayData) {
-      if (i == itemId) {
-        return dayData[itemId];
-      };
-    };
-  },
-  //添加
-  addOneDayData(dayId, obj) {
+  getNote:function(index) {
+    let notes = wx.getStorageSync("allNotes")||[];
+    return notes[index];
   },
   getAllNotes(){
     return notes = wx.getStorageSync("allNotes")||[];
   },
-  addOneItemData:function(itemId, content, date, time) {
+  addNote:function(itemId, content, date, time) {
     let note = {"itemId":itemId,"content":content,"date":date, "time":time};
     console.log("note:"+note);
     let notes = wx.getStorageSync("allNotes")||[];
-    //倒排序
+    //在首部插入
     notes.unshift(note);
     //重新排序
     if (notes.length > 1) {
@@ -67,19 +56,17 @@ App({
       }
     }
     wx.setStorageSync('allNotes',notes);
-    // wx.setStorage({
-    //   key: "allNotes",
-    //   data: notes,
-    //   success() {
-    //     if (fun) fun();
-    //   }
-    // });
-    // notes = wx.getStorageSync("allNotes");
-    // console.log("notes.length: "+notes.length)
-    // for (var i = 0; i < notes.length; i++) {
-    //   console.log(notes[i].content);
-    // }
   },
+  changeNote:function(index,itemId,content,date,time){
+    let note = {"itemId":itemId,"content":content,"date":date, "time":time};
+    let notes = wx.getStorageSync("allNotes")||[];
+    notes[index] = note;
+    notes = notes.sort((a,b)=>{
+       return -(a.itemId - b.itemId)
+    })
+    wx.setStorageSync('allNotes',notes);
+  },
+  //notes存储信息
   storageNotesInfo:function(){
     let notes = wx.getStorageSync("allNotes");
     console.log("storageNotesInfo:")
@@ -89,23 +76,7 @@ App({
     }
   },
   //设置
-  setOneDayData(dayId, obj) {
-  },
   setOneItemData(dayId, itemId, obj) {
-  },
-  //删除
-  removeOneDayData(dayId) {
-  },
-  removeOneItemData(dayId, itemId, fun) {
-    let dayData = wx.getStorageSync(dayId) || {};
-    delete dayData[itemId];
-    wx.setStorage({
-      key: dayId,
-      data: dayData,
-      success() {
-        if (fun) fun();
-      }
-    });
   },
   globalData: {
     userInfo: null
