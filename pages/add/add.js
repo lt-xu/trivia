@@ -92,6 +92,7 @@ Page({
     let time = this.data["time"];
     console.log("add.js:content:"+content);
     app.addOneItemData(itemId,content,date,time);
+    app.storageNotesInfo();
     wx.switchTab({
       url:'/pages/lists/lists',
       success:function(){
