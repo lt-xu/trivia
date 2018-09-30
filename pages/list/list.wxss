@@ -50,6 +50,12 @@
   /* font-size: 50rpx; */
   text-align: left;
   /* font-weight: bold; */
+  /* 超出一行文字自动隐藏 */
+  overflow:hidden; 
+  /* 文字隐藏后添加省略号 */
+  text-overflow:ellipsis;
+  /* 强制不换行 */
+  white-space:nowrap; 
 }
 .btnbox .text .date{
   color: #a9a9a9;
@@ -59,6 +65,7 @@
 }
 .btnbox.text.content{
   /* font-weight: bold; */
+  
 }
 
 .round-click {
