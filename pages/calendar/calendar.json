@@ -1,1 +1,6 @@
-{}
+{
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "slider-left": "/components/slider-left/index"
+  }
+}
