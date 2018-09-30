@@ -6,12 +6,16 @@ Page({
   data: {
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    totall:0
   },
   //事件处理函数
   bindViewTap: function () {
-    wx.navigateTo({
-      url: '../logs/logs'
+  },
+  onShow:function(){
+    let notes = app.getAllNotes();
+    this.setData({
+      totall:notes.length,
     })
   },
   onLoad: function () {

@@ -7,6 +7,6 @@
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
   </view>
-  <button class='btn' bindtap='clear'>清缓存</button>
+  <text class='text'>记录总条数：{{totall}}</text>
 </view>
 
