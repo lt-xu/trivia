@@ -17,11 +17,11 @@
   margin-bottom: 1rpx;
 }
 .btnbox {
-  width: 750rpx;
+  /* width: 750rpx; */
   /* height: 100rpx; *//* border-radius: 9px; */
   position: relative;
   overflow: hidden;
-  border: 10px;
+  /* border: 10px; */
 }
 
 .btnbox .btn {
@@ -42,8 +42,9 @@
 
 
 .btnbox .text {
-  width: 100%;
   /* height: 100rpx; */
+  margin-left: 40rpx;
+  margin-right: 40rpx;
   background: #fff;
   /* color: #000; */
   line-height: 110rpx;
@@ -59,9 +60,8 @@
 }
 .btnbox .text .date{
   color: #a9a9a9;
-  margin:20rpx;
+  margin-right:20rpx;
   font-size:small;
-  margin-left: 50rpx;
 }
 .btnbox.text.content{
   /* font-weight: bold; */
@@ -81,42 +81,3 @@
   height: 100rpx;
   width: 100rpx;
 }
-
-.list_item{
-	padding:24rpx 30rpx 24rpx 80rpx; 
-	background-color: #fff;
-	position: relative;
-	margin-bottom: 10rpx;
-}
-.list_item icon{
-	position: absolute;
-	top:24rpx;
-	left:24rpx; 
-}
-.list_item .title{
-	font-size: 13px;
-	margin-bottom:18rpx; 
-}	
-.list_item .content{
-	font-size: 12px;
-  font-weight: bold;
-}
-.addbtn{
-	position: fixed;
-	width: 160rpx;
-	height: 136rpx; 
-	text-align: center;
-	bottom:80rpx;
-	right:80rpx;
-	color:#1180ff; 
-}
-.addbtn navigator{ 
-  width: 96rpx;
-	height: 96rpx; 
-	border-radius: 50%;
-  display: block;
-  margin:0 auto;
-}
-.addbtn i{
-	font-size:96rpx;  
-} 
