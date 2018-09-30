@@ -17,7 +17,7 @@
   margin-bottom: 1rpx;
 }
 .btnbox {
-  /* width: 750rpx; */
+  width: 750rpx;
   /* height: 100rpx; *//* border-radius: 9px; */
   position: relative;
   overflow: hidden;
