@@ -21,7 +21,7 @@
 </view>
 <navigator url="/pages/add/add">
   <view class="round-click">
-    <image class='addition' src='/image/addicon2.png'></image>
+    <image class='addition' src='/image/addicon1.png'></image>
   </view>
 </navigator>
 

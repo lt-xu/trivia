@@ -71,13 +71,13 @@
 .round-click {
   background: transparent;
   position: fixed;
-  bottom: 120rpx;
-  right: 325rpx;
+  bottom: 100rpx;
+  right: 311rpx;
   z-index: 9;
 }
 .addition {
   float: left;
   background: transparent;
-  height: 100rpx;
-  width: 100rpx;
+  height: 128rpx;
+  width: 128rpx;
 }
