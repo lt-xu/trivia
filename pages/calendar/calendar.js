@@ -28,9 +28,11 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+  	console.log("onReady");
     this.data.notes.forEach(note => {
-      note.isOpen = false
+      note.isOpen = false;                 //添加isOpen属性，isOpen用于左划检查
     });
+    console.log(this.data.notes);
   },
 
   /**
@@ -130,7 +132,7 @@ Page({
     console.log(dataset);
     app.storageNotesInfo();
     let id = dataset.itemid; //拿到的note的itemid,不能用数组的index
-    let notes = this.data.notes;
+    let notes = app.getAllNotes();  //从Storage中获得的notes中不含isOpen属性
     for (var i = 0; i < notes.length; i++) {
     	if (notes[i].itemId == id) {
     		notes.splice(i, 1);
@@ -138,6 +140,9 @@ Page({
     	}
     }
     wx.setStorageSync('allNotes', notes);
+    this.data.notes.forEach(note => {
+      note.isOpen = false;           //重新添加isOpen属性
+    });
     let daysNotesList = this.getDaysNotesList(notes);   //按日期成组的notes的列表
     let days = this.getDaysThatHasNotes(daysNotesList);    //有notes的日期
     let selectedDay = getSelectedDay();
@@ -213,5 +218,17 @@ Page({
   		selectedDayNotes = daysNotesList[fullDate];
   	}
   	return selectedDayNotes;
+  },
+    handleSliderLeftStart: function (e) {
+    console.log('开始左滑', e.target.dataset.itemid)
+    this.data.notes.forEach(todoItem => {
+      // 除了当前项，其它打开项的菜单都关闭，确保每次只有一个项可以左滑显示删除
+      if (todoItem.itemId !== e.target.dataset.itemid && todoItem.isOpen) {  //注意itemid中的i大小写不同
+        todoItem.isOpen = false
+      }
+    });
+    this.setData({
+      notes: this.data.notes
+    })
   },
 })

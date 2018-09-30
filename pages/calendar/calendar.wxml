@@ -8,6 +8,7 @@
   open="{{note.isOpen}}" wx:for-index="index" 
   data-index="{{index}}"
   data-itemId="{{note.itemId}}"
+  bind:sliderLeftStart="handleSliderLeftStart"
   bind:delete="handleDelete">
   <view class='btnbox'>
     <button class="btn"  data-index="{{index}}" bindtap="edit"></button>
