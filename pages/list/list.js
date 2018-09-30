@@ -108,16 +108,16 @@ Page({
   //   console.log('显示/关闭了菜单:', isOpen)
   // },
 
-  // handleSliderLeftStart: function (e) {
-  //   console.log('开始左滑', e.target.dataset.id)
-  //   this.data.notes.forEach(todoItem => {
-  //     // 除了当前项，其它打开项的菜单都关闭，确保每次只有一个项可以左滑显示删除
-  //     if (todoItem.id !== e.target.dataset.id && todoItem.isOpen) {
-  //       todoItem.isOpen = false
-  //     }
-  //   });
-  //   this.setData({
-  //     notes: this.data.notes
-  //   })
-  // },
+  handleSliderLeftStart: function (e) {
+    console.log('开始左滑', e.target.dataset.id)
+    this.data.notes.forEach(todoItem => {
+      // 除了当前项，其它打开项的菜单都关闭，确保每次只有一个项可以左滑显示删除
+      if (todoItem.id !== e.target.dataset.id && todoItem.isOpen) {
+        todoItem.isOpen = false
+      }
+    });
+    this.setData({
+      notes: this.data.notes
+    })
+  },
 });
