@@ -221,10 +221,10 @@ Page({
   },
     handleSliderLeftStart: function (e) {
     console.log('开始左滑', e.target.dataset.itemid)
-    this.data.notes.forEach(todoItem => {
+    this.data.notes.forEach(item => {
       // 除了当前项，其它打开项的菜单都关闭，确保每次只有一个项可以左滑显示删除
-      if (todoItem.itemId !== e.target.dataset.itemid && todoItem.isOpen) {  //注意itemid中的i大小写不同
-        todoItem.isOpen = false
+      if (item.itemId !== e.target.dataset.itemid && item.isOpen) {  //注意itemid中的i大小写不同
+        item.isOpen = false
       }
     });
     this.setData({
