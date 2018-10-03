@@ -17,7 +17,8 @@
 列表项左划删除  
 <img src="https://github.com/SparkOfLife/trivia/blob/master/readMeImg/slider.png" width="400" align=center />
 编辑页：  
-<img src="https://github.com/SparkOfLife/trivia/blob/master/readMeImg/add.png" width="400" align=center />
+<img src="https://github.com/SparkOfLife/trivia/blob/master/readMeImg/add.png" width="400" align=center />  
+
 ### 后续
 开发基本完成后，向微信官方申请发布：  
 <img src="https://github.com/SparkOfLife/trivia/blob/master/readMeImg/result.png" width="400" align=center />
