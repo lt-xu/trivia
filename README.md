@@ -20,6 +20,6 @@
 <img src="https://github.com/SparkOfLife/trivia/blob/master/readMeImg/add.png" width="400" align=center />
 ### 后续
 开发基本完成后，向微信官方申请发布：  
-  
+<img src="https://github.com/SparkOfLife/trivia/blob/master/readMeImg/result.png" width="400" align=center />
 ╮(╯▽╰)╭ 本来开发这个小程序也是为了方便自己（其他类似的app、微信小程序我用的不舒服），所以就这样吧，体验了一把小程序的开发过程。
 
