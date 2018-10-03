@@ -7,16 +7,17 @@
   
 ### 下面是一些效果图  
 三个tab：列表页、日历页、个人中心  
-列表页：  
-![list](https://github.com/SparkOfLife/trivia/blob/master/readMeImg/list.png)
-日历页：  
-  
-个人中心（比较简陋，可继续开发，对笔记进行数据分析等）：  
-  
-  列表项左划删除  
+列表页： 
 
+<img src="https://github.com/SparkOfLife/trivia/blob/master/readMeImg/list.png" width="400" align=center />  
+日历页：  
+<img src="https://github.com/SparkOfLife/trivia/blob/master/readMeImg/calendar.png" width="400" align=center />
+个人中心（比较简陋，可继续开发，对笔记进行数据分析等）：  
+<img src="https://github.com/SparkOfLife/trivia/blob/master/readMeImg/me.png" width="400" align=center />
+列表项左划删除  
+<img src="https://github.com/SparkOfLife/trivia/blob/master/readMeImg/slider.png" width="400" align=center />
 编辑页：  
-  
+<img src="https://github.com/SparkOfLife/trivia/blob/master/readMeImg/add.png" width="400" align=center />
 ### 后续
 开发基本完成后，向微信官方申请发布：  
   
