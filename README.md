@@ -7,16 +7,17 @@
   
 ### 效果图  
 三个tab：列表页、日历页、个人中心  
-列表页： 
-<img src="https://github.com/SparkOfLife/trivia/blob/master/readMeImg/list.png" width="400" align=center />  
+
+列表页:  
+<img src="https://github.com/SparkOfLife/trivia/blob/master/readMeImg/list.png" width="400"/>  
   
-日历页：  
+日历页:  
 <img src="https://github.com/SparkOfLife/trivia/blob/master/readMeImg/calendar.png" width="400" align=center />  
   
 个人中心（比较简陋，可继续开发，对笔记进行数据分析等）：  
 <img src="https://github.com/SparkOfLife/trivia/blob/master/readMeImg/me.png" width="400" align=center />  
   
-列表项左划删除  
+列表项左划可删除：  
 <img src="https://github.com/SparkOfLife/trivia/blob/master/readMeImg/slider.png" width="400" align=center />  
   
 编辑页：  
